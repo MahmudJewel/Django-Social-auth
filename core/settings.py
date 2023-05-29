@@ -15,10 +15,10 @@ import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates') 
-STATIC_DIR = os.path.join(BASE_DIR, 'static') 
-STATIC_ROOT_DIR = os.path.join(BASE_DIR, 'autoStatic') 
-MEDIA_DIR = os.path.join(BASE_DIR, 'media') 
+TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
+STATIC_DIR = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT_DIR = os.path.join(BASE_DIR, 'autoStatic')
+MEDIA_DIR = os.path.join(BASE_DIR, 'media')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
@@ -41,10 +41,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # installed app 
+    # installed app
     'home',
     'authmanagement',
-    # third party app 
+    # third party app
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [
@@ -124,8 +125,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIR = [STATIC_DIR] # Search during collectstatic
-STATIC_ROOT = STATIC_ROOT_DIR # collectstatic==> automatically created 'autoStatic' folder.
+STATICFILES_DIR = [STATIC_DIR]  # Search during collectstatic
+# collectstatic==> automatically created 'autoStatic' folder.
+STATIC_ROOT = STATIC_ROOT_DIR
 MEDIA_ROOT = MEDIA_DIR
 MEDIA_URL = '/media/'
 
@@ -135,3 +137,4 @@ MEDIA_URL = '/media/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'authmanagement.User'
+LOGIN_REDIRECT_URL = '/'

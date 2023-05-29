@@ -57,11 +57,14 @@
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
           <li class="nav-item me-2 mb-lg-0 mb-3">
-            <a class=" btn " aria-current="page" href="">Blog</a>
+            <a class=" btn " aria-current="page" href="{% url 'signup' %}">Signup</a>
           </li>
 
           <li class="nav-item me-2 mb-lg-0 mb-3">
-            <a class=" btn " aria-current="page" href="">Cat</a>
+            <a class=" btn " aria-current="page" href="{% url 'login' %}">Login</a>
+          </li>
+          <li class="nav-item me-2 mb-lg-0 mb-3">
+            <a class=" btn " aria-current="page" href="{% url 'logout' %}">Logout</a>
           </li>
         </ul>
         <form class="d-flex" method="post" action="/">
