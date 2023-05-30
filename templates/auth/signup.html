@@ -110,7 +110,7 @@
                 <!-- level & textarea -->
                 {{ field.label_tag }}<br>
             <div class="form-group">
-                {% render_field field|attr:'required:true' class="form-control item" %}
+                {% render_field field|attr:'' class="form-control item" %}
             </div>
             <!-- help text or suggestions -->
             {% if field.help_text %}
