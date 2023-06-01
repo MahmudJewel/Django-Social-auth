@@ -47,7 +47,6 @@ from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, Permis
 from django.db import models
 from django.utils import timezone
 
-
 class UserManager(BaseUserManager):
     def _create_user(self, email, password, **extra_fields):
         if not email:

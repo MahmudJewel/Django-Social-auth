@@ -54,7 +54,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
 
     'allauth.socialaccount.providers.google',
-    'allauth.socialaccount.providers.linkedin',
+    # 'allauth.socialaccount.providers.linkedin',
     # end all auth
 ]
 # all auth
@@ -62,20 +62,20 @@ SITE_ID = 1
 # all auth
 SOCIALACCOUNT_PROVIDERS = {
     'google': {
-        'APP': {
-            'client_id': '123',
-            'secret': '456',
-            'key': ''
-        }
+        'SCOPE': [
+            'Profile',
+            'email',
+        ],
+        'AUTH_PARAMS':{"access_type": "online"}
     },
-    
-    'linkedin': {
-        'APP': {
-            'client_id': '123',
-            'secret': '456',
-            'key': ''
-        }
-    }
+
+    # 'linkedin': {
+    #     'APP': {
+    #         'client_id': '123',
+    #         'secret': '456',
+    #         'key': ''
+    #     }
+    # }
 }
 
 MIDDLEWARE = [
@@ -179,3 +179,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'authmanagement.User'
 LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
