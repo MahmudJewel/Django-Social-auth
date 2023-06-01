@@ -58,24 +58,31 @@ INSTALLED_APPS = [
     # end all auth
 ]
 # all auth
-SITE_ID = 1
+SITE_ID = 1  # from social applications id ==> admin panel
 # all auth
 SOCIALACCOUNT_PROVIDERS = {
     'google': {
         'SCOPE': [
-            'Profile',
-            'email',
+            'Profile',  # from google set-up
+            'email',  # from google set-up
         ],
-        'AUTH_PARAMS':{"access_type": "online"}
+        'AUTH_PARAMS': {"access_type": "online"}
     },
-
-    # 'linkedin': {
-    #     'APP': {
-    #         'client_id': '123',
-    #         'secret': '456',
-    #         'key': ''
-    #     }
-    # }
+    
+    'linkedin': {
+        'SCOPE': [
+            'r_basicprofile',
+            'r_emailaddress'
+        ],
+        'PROFILE_FIELDS': [
+            'id',
+            'first-name',
+            'last-name',
+            'email-address',
+            'picture-url',
+            'public-profile-url',
+        ]
+    }
 }
 
 MIDDLEWARE = [
