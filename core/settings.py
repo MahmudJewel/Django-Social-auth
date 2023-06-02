@@ -62,14 +62,24 @@ SITE_ID = 1  # from social applications id ==> admin panel
 # all auth
 SOCIALACCOUNT_PROVIDERS = {
     'google': {
+        # 'APP': {   # better to set on admin page
+        #     'client_id': '',
+        #     'secret': '',
+        #     'key': ''
+        # },
         'SCOPE': [
             'Profile',  # from google set-up
             'email',  # from google set-up
         ],
         'AUTH_PARAMS': {"access_type": "online"}
     },
-    
-    'linkedin': {
+
+    'linkedin': { 
+        # 'APP': {  # better to set on admin page
+        #     'client_id': '',
+        #     'secret': '',
+        #     'key': ''
+        # },
         'SCOPE': [
             'r_basicprofile',
             'r_emailaddress'
