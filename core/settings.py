@@ -74,7 +74,7 @@ SOCIALACCOUNT_PROVIDERS = {
         'AUTH_PARAMS': {"access_type": "online"}
     },
 
-    'linkedin': { 
+    'linkedin': {
         # 'APP': {  # better to set on admin page
         #     'client_id': '',
         #     'secret': '',
@@ -197,3 +197,12 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'authmanagement.User'
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
+
+# smtp mail
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'your_account@gmail.com'
+EMAIL_HOST_PASSWORD = "your account's password"
